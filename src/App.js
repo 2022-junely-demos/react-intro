@@ -3,7 +3,6 @@ import './App.css';
 import Cat from './components/Cat/Cat';
 import cats from './cats';
 function App() {
-  console.log(cats);
   const catComponents = [];
   for (let cat of cats) {
     catComponents.push(<Cat key={cat.name} name={cat.name} />);
@@ -23,7 +22,6 @@ function App() {
       {/* notice use of curlys in arrow function requires return */}
       {/* in case you need to do extra stuff before the return */}
       {cats.map((cat) => {
-        console.log(console.log('hello'));
         const nameAndType = `${cat.name} ${cat.type}`;
         return <Cat key={cat.name} name={nameAndType} lives={cat.lives} />;
       })}

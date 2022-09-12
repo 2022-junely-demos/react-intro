@@ -1,14 +1,36 @@
-import logo from './logo.svg';
+import background from './background.jpeg';
 import './App.css';
-import Cat from './components/Cat';
-
+import Cat from './components/Cat/Cat';
+import cats from './cats';
 function App() {
+  console.log(cats);
+  const catComponents = [];
+  for (let cat of cats) {
+    catComponents.push(<Cat key={cat.name} name={cat.name} />);
+  }
   return (
-    <>
+    <div style={{ backgroundImage: `url(${background})` }}>
       <div>Hello world</div>
-      <Cat name="Fluffy" age={7} />
-      <Cat name="Tilly" age={3} />
-    </>
+      {[<Cat key="1" name="Fluffy" lives={7} />, <Cat key="2" name="Tilly" age={3} />]}
+
+      <h2>Option 1 for Mapping</h2>
+      {/* use of regular parens has automatic return */}
+      {cats.map((cat) => (
+        <Cat key={cat.name} name={cat.name} lives={cat.lives} />
+      ))}
+
+      <h2>Option 2 for Mapping</h2>
+      {/* notice use of curlys in arrow function requires return */}
+      {/* in case you need to do extra stuff before the return */}
+      {cats.map((cat) => {
+        console.log(console.log('hello'));
+        const nameAndType = `${cat.name} ${cat.type}`;
+        return <Cat key={cat.name} name={nameAndType} lives={cat.lives} />;
+      })}
+
+      <h2>Option 3 Manual (do not do this) </h2>
+      {catComponents}
+    </div>
   );
 }
 

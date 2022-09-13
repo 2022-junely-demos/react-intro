@@ -6,6 +6,7 @@ const cats = [
     year: 1892,
     lives: 3,
     isSidekick: false,
+    color: 'red',
   },
   {
     name: 'Garfield',
@@ -14,6 +15,7 @@ const cats = [
     year: 1978,
     lives: 7,
     isSidekick: false,
+    color: 'blue',
   },
   {
     name: 'Duchess',
@@ -22,6 +24,7 @@ const cats = [
     year: 1970,
     lives: 9,
     isSidekick: false,
+    color: 'purple',
   },
   {
     name: 'Stimpy',

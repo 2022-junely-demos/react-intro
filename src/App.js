@@ -15,7 +15,7 @@ function App() {
       <h2>Option 1 for Mapping</h2>
       {/* use of regular parens has automatic return */}
       {cats.map((cat) => (
-        <Cat key={cat.name} name={cat.name} lives={cat.lives} />
+        <Cat key={cat.name} name={cat.name} lives={cat.lives} color={cat.color} />
       ))}
 
       <h2>Option 2 for Mapping</h2>
